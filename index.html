@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+
+    <link rel="stylesheet" href="input.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Rajdhani&family=Vollkorn:wght@500&display=swap" rel="stylesheet"> 
+   
+    <title>Document</title>
+</head>
+<style>
+    /* reusable classes */
+    .conatiner{
+    max-width: 1024px;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+    }
+    .section{
+    padding: 4.5rem 0 2rem;
+    }
+
+    /* header */
+   .homeHeading{
+    font-family: 'Della Respira', serif;
+   } 
+   
+   .header{
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+    transition: .4s;
+   }
+   .btn i{
+    font-size: 1.1rem;
+    top: 1px;
+    position: relative;
+    transition: .3s;
+   }
+   .btn:hover i{
+    translate: 1rem;
+   }
+   /* active-Link */
+   .active-Link{
+    color: black;
+   }
+
+   /* new section  */
+   .newLink i{
+    font-size: 1.25rem;
+    transition: .3s;
+   }
+   .newLink:hover i{
+    transform: translateX(.25rem);
+   }
+
+
+   /* scrollHeader */
+   .scrollHeader{
+    background-color: white;
+    box-shadow: 0 1px 4px rgb(242 229 215);
+   }
+
+   /* collection section  */
+   
+   .collectionExplore{
+    display: grid;
+    column-gap: 2rem;
+    position: absolute;
+   }
+
+   .collectionExplore:nth-child(2){
+    grid-template-columns: 230px max-content;
+    bottom: 2rem;
+    margin-left: -2rem;
+   }
+   .collectionExplore:nth-child(1){
+    grid-template-columns: max-content 230px;
+    top: 0;
+    margin-left: 3rem;
+   }
+
+   /* collection font  */
+   .collectionText{
+    font-family: 'Prata', serif;
+   }
+
+   /* collection medium size display */
+   @media screen and (min-width: 768px ){
+
+   .collectionExplore:nth-child(2){
+    grid-template-columns: 230px max-content;
+    bottom: 2rem;
+    margin-left: 8rem;
+   }
+   .collectionExplore:nth-child(1){
+    grid-template-columns: max-content 230px;
+    top: 2rem;
+    margin-left: 13rem;
+   }
+}
+   
+   /* swiper card arrow  */
+   .swiper-button-next::after,
+   .swiper-button-prev::after{
+    content: '';
+    
+   }
+   .swiper-button-next,
+   .swiper-button-prev{
+    top: initial;
+    bottom: 0;
+    font-size: 1.5rem;
+    color: black;
+    cursor: pointer;
+   }
+   .swiper-button-next{
+    right: calc(50% - 2rem)
+   }
+   .swiper-button-prev{
+    left: calc(50% - 2rem)
+   }
+
+   /* brand section */
+   .brand-container{
+    grid-template-columns: repeat(2,max-content);
+    justify-content: center;
+    column-gap: 2.5rem;
+   }
+   .brand-image:nth-child(even){
+    margin-top: 2.5rem;
+   }
+   .brand-section h2{
+    font-family: 'Della Respira', serif;
+   }
+
+   /* footer  */
+   .footer__link{
+    transition: .3s;
+   }
+   .footer__link:hover{
+    text-decoration: underline;
+    color: black;
+   }
+
+   /* scrollbar  */
+   ::-webkit-scrollbar{
+    width: 1rem;
+    border-radius: .5rem;
+    
+    background-color: hsl(24, 100%, 63%);
+   }
+   ::-webkit-scrollbar-thumb{
+    background-color: hsl(24, 100%, 73%);
+    border-radius: .5rem;
+   }
+   ::-webkit-scrollbar-thumb:hover{
+    background-color: hsl(24, 100%, 83%);
+   
+   }
+   /* scrollup  */
+   .scrollup{
+    transition: .3s;
+   }
+   .scrollup:hover{
+    transform: translateY(-.25rem);
+   }
+   .show-scroll{
+    bottom: 7.5rem;
+   }
+
+   /* ======================== resposive style =============== */
+   @media screen and (max-width: 1024px) {
+    .navMenu{
+        position: fixed;
+        bottom: 1.5rem;
+        background-color: white;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        padding: 1.25rem 2.8rem;
+        border-radius: .5rem;
+    }
+}
+   @media screen and ( min-width: 1024px){
+    .home__container{
+        grid-template-columns: repeat(2,max-content);
+        justify-content: center;
+        column-gap: 11rem;
+    }
+    
+    .new__container{
+        grid-template-columns: repeat(3,max-content);
+        justify-content: center;
+        column-gap: 15rem;
+    }
+
+    .section{
+        padding: 7rem 0 1rem;
+    }
+
+    .navbar{
+        height: 4.5rem;
+    }
+    
+    .navLink i{
+        display: none;
+    }
+
+    .collectionExplore{
+    
+    column-gap: 6rem;
+
+   }
+    .collectionExplore:nth-child(2){
+    grid-template-columns: 320px max-content;
+    bottom: 4rem;
+    margin-left: 60rem;
+   }
+   .collectionExplore:nth-child(1){
+    grid-template-columns: max-content 320px;
+    top: 0;
+    margin-left: 65rem;
+   }
+
+    .brand-container{
+    grid-template-columns: repeat(4,max-content);
+    column-gap: 7rem;
+   }
+   }
+</style>
+<body >
+    <header class="header bg-[#F2E5D7] lg:h-24" id="header">
+    <nav class="navbar flex justify-between items-center  ">
+        <div class="navLogo w-28 mt-3 lg:mt-8">
+            <img src="asset/logo.png" alt="">
+        </div>
+        <div class="navMenu fixed bottom-6   shadow-xl md:w-[400px] w-[90%] lg:static lg:rounded-none lg:shadow-none lg:w-[initial] lg:ml-auto lg:mr-8 lg:mt-8">
+            <ul class="navList flex justify-between items-center gap-x-20">
+                <li class="navItem">
+                    <a class="navLink active-Link grid justify-items-center gap-y-2" href="#home">
+                        <i class="ri-home-line"></i>
+                        <span class="cursor-pointer  text-gray-600 lg:hover:text-black lg:text-2xl lg:font-seibold">Home</span> 
+                    </a>
+                </li>
+                <li class="navItem">
+                    <a class="navLink grid justify-items-center gap-y-2" href="#new">
+                        <i class="ri-price-tag-3-line"></i>
+                        <span class="cursor-pointer  text-gray-600 lg:hover:text-black lg:text-2xl  lg:font-smibold ">New</span> 
+                    </a>
+                </li>
+                <li class="navItem">
+                    <a class="navLink grid justify-items-center gap-y-2" href="#collections">
+                        <i class="ri-compasses-line"></i>
+                        <span class="cursor-pointer  text-gray-600 lg:hover:text-black lg:text-2xl  lg:font-smibold ">Collections</span> 
+                    </a>
+                </li>
+                <li class="navItem">
+                    <a class="navLink grid justify-items-center gap-y-2" href="#products">
+                        <i class="ri-t-shirt-line"></i>
+                        <span   class="cursor-pointer  text-gray-600 lg:hover:text-black lg:text-2xl lg:font-sembold ">Products</span>
+                    </a> 
+                </li>
+            </ul>
+        </div>  
+               
+    </nav>
+    </header>
+
+    <!---------- main section -------->
+    <main class="mt-16 ">
+        <section class="bg-[#F2E5D7] overflow-hidden h-[52rem] md:h-[58rem] lg:h-[70rem]" id="home">
+            <div class="home__container grid gap-y-36 lg:gap-y-20 py-16 ">
+                <div class="home__data mt-24 lg:mt-48 lg:space-y-10 ">
+                    <h1 class="homeHeading text-4xl font-medium lg:text-9xl ml-3 lg:ml-[-1rem] pl-2 mt-6 lg:mt-20">
+                        New Clothing <br>
+                        Collection
+                    </h1>
+                    <p class="homePara my-8 ml-3 lg:ml-[-1rem] pl-2 text-lg lg:text-2xl">
+                        The new collection of clothing from <br>
+                        the best brands this year
+                    </p>
+                   <a href="#" class="btn ml-6 lg:ml-[-.5rem] inline-flex text-xl lg:text-2xl gap-x-2">
+                    Explore <i class="ri-arrow-right-line"></i>
+                   </a>
+                </div>
+                <div class="homeImages relative justify-self-center w-[310px] lg:w-[450px] lg:mt-72 ">
+                    <img class="w-56 md:w-64 md:h-80 lg:w-[35rem]  lg:h-[39rem] lg:rounded-xl h-72 absolute right-[-1.5rem] top-[-9.5rem]" src="asset/model 1.jpg" alt="home image">
+                    <img class="relative w-52 md:w-[14rem] lg:w-96 lg:top-40  lg:right-40 lg:ml-0 ml-2 lg:rounded-xl" src="asset/model 2.jpg" alt="home image">
+                </div>
+            </div>
+        </section>
+        <section class="=newSection my-40 " id="new">
+            <div class="h2 flex items-center justify-center">
+                <img src="asset/new categories.png" alt="">
+            </div>
+            <div class="new__container grid gap-y-10 pb-6 lg:mt-20">
+                <article class="newCard justify-self-center">
+                    <img class="w-80 mt-10 mb-4 " src="asset/new1.png" alt="">
+
+                    <a href="#" class="newLink flex items-center justify-between pr-3" >
+                        <div>
+                            <h2 class=" mt-1 text-2xl">
+                                Hoodie & Sweatshirt
+                            </h2>
+                            <span class="newSubtitle text-gray-600">
+                                Winter Collection
+                            </span>
+                        </div>
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </article>
+
+                <article class="newCard justify-self-center">
+                    <img class="w-80 mt-10 mb-4" src="asset/new 2.jpg" alt="">
+
+                    <a href="#" class="newLink flex items-center justify-between pr-3" >
+                        <div>
+                            <h2 class=" mt-1 text-2xl">
+                                Pants & Jackets
+                            </h2>
+                            <span class="newSubtitle  text-gray-600">
+                                Winter Collection
+                            </span>
+                        </div>
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </article>
+
+                <article class="newCard justify-self-center">
+                    <img class="w-80 mt-10 mb-4" src="asset/new 3.jpg" alt="">
+
+                    <a href="#" class="newLink flex items-center justify-between pr-3" >
+                        <div>
+                            <h2 class="mt-1 text-2xl">
+                                Coats & Coat Sets
+                            </h2>
+                            <span class="newSubtitle text-gray-600">
+                                Winter Collection
+                            </span>
+                        </div>
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </article>
+            </div>
+        </section>
+        <section class="collection section bg-[#F2E5D7] overflow-hidden" id="collections">
+            <div class="collectionContainer container relative h-[571px] lg:h-[900px] grid justify-center ">
+                <div class="collectionExplore ">
+                    <div class="collectionMen mt-10 lg:mt-20 ">
+                        <h2 class="collectionText text-3xl lg:text-5xl mb-3">
+                             Men <br>
+                            Collection
+                        </h2>
+                        <a href="#" class="btn inline-flex text-lg lg:text-xl gap-x-2">
+                            Explore Clothes <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </div>
+                    <img class="" src="asset/mens collection.jpg" alt="collection image">
+                </div>
+
+                <div class="collectionExplore">
+                    <img src="asset/womens collection.jpg" alt="collection image">
+                    <div class="collectionWomen self-end mb-10 lg:mb-14">
+                        <h2 class="collectionText text-3xl lg:text-5xl mb-3">
+                            Women <br>
+                            Collection
+                        </h2>
+                        <a href="#" class="btn inline-flex text-lg lg:text-xl gap-x-2">
+                            Explore Clothes <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </div>
+                    
+                </div>
+
+               
+            </div>
+        </section>
+        <section class="productSections my-40" id="products">
+            <div class="flex ml-4 items-center justify-center">
+                <img src="asset/BEST PRODUCTS.png" alt="">
+            </div>
+
+            <div class="productsContainer md:w-[450px] w-[350px] my-4 swiper pb-20 lg:my-20">
+                <div class="swiper-wrapper">
+                    <article class="productsCards w-[270px] my-4 swiper-slide">
+                        <img class="mb-4" src="asset/product 1.jpg" alt="product image">
+                        <h2 class="text-xl">
+                            Varsity Jacket
+                        </h2>
+                        <span class=" text-gray-500">$124.99</span>
+                    </article>
+                    <article class="productsCards w-[270px]  my-4 swiper-slide">
+                        <img class="mb-4" src="asset/product 2.jpg" alt="product image">
+                        <h2 class="text-xl">
+                            Cotton Crew Neck Jumper 
+                        </h2>
+                        <span class=" text-gray-500">$69.99</span>
+                    </article>
+                    <article class="productsCards w-[270px]  my-4 swiper-slide">
+                        <img class="mb-4 " src="asset/product 3.jpg" alt="product image">
+                        <h2 class="text-xl">
+                            Cargo Joggers
+                        </h2>
+                        <span class="text-gray-500">$64.99</span>
+                    </article>
+                </div>
+
+                <div class="swiper-button-next ">
+                    <i class="ri-arrow-right-line"></i>
+                </div>
+                <div class="swiper-button-prev">
+                    <i class="ri-arrow-left-line"></i>
+                </div>
+                
+            </div>
+        </section>
+        <section class="brand-section mb-20 lg:my-40">
+            <h2 class="flex justify-center text-5xl ">
+                Brands We Sell
+            </h2>
+            <div class="brand-container grid mt-16">
+                <img class="brand-image w-32 lg:w-44 bg-slate-200 rounded-lg" src="asset/brand 1.png" alt="">
+                <img class="brand-image w-32 lg:w-44 bg-slate-200 rounded-lg" src="asset/brand 2.png" alt="">
+                <img class="brand-image w-36 lg:w-44 bg-slate-200 rounded-lg" src="asset/brad 3.png" alt="">
+                <img class="brand-image w-32 lg:w-44 bg-slate-200 rounded-lg" src="asset/brand 4.png" alt="">
+            </div>
+        </section>
+
+    </main>
+
+    <!------------- Footer ------------>
+    <footer>
+        <div class="footerContainer grid gap-y-14 ml-5 mb-8 " >
+            <div class="lg:mx-9">
+                <a class="font-medium mb-3 inline-block text-xl lg:text-2xl" href="#">
+                    Fashion Hanger
+                </a>
+                <p class="text-gray-600 text-lg">
+                    Committed to bring you the <br>
+                    best clothing from popular <br>
+                    brands.
+                </p>
+
+            </div>
+
+            <div class="footerContent grid grid-cols-2 lg:grid-cols-4 lg:gap-y-4 lg:mx-9 gap-14">
+                <div>
+                    <h3 class="text-xl font-medium mb-5 lg:text-2xl">
+                        Company
+                    </h3>
+                    <ul class=" text-gray-600 grid gap-y-3 text-lg">
+                        <li>
+                            <a href="#" class="footer__link">Shop</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Category</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Contact info</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-medium mb-5 lg:text-2xl">
+                        Blog
+                    </h3>
+                    <ul class=" text-gray-600 grid gap-y-3 lg:text-lg">
+                        <li>
+                            <a href="#" class="footer__link">Events</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Popular News</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Recent News </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-medium mb-5 lg:text-2xl">
+                        Office
+                    </h3>
+                <p class="text-gray-600 grid gap-y-3 text-lg" >
+                    Monday-Saturday <br>
+                    9AM-10PM
+                </p>                    
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-medium mb-5 lg:text-2xl">
+                        Contact us
+                    </h3>
+                    <ul class="flex gap-x-2 ">
+                        <a href="https://www.facebook.com/" class="inline-flex p-2 bg-slate-100 hover:bg-slate-200 rounded-md lg:w-8">
+                            <i class="ri-facebook-circle-fill"></i>
+                        </a>
+                        <a href="https://www.instagram.com" class="inline-flex p-2  bg-slate-100 hover:bg-slate-200 rounded-md lg:w-8">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="https://www.youtube.com/" class="inline-flex p-2 bg-slate-100  hover:bg-slate-200 rounded-md lg:w-8">
+                            <i class="ri-youtube-line"></i>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer__info mx-4 flex flex-col items-center gap-y-3 mb-36 mt-20 ">
+            <span class="text-gray-400 text-sm lg:text-base">
+                &#169; Ayush. All rights reserved
+            </span>
+            <a href="#" class="text-gray-400 text-sm lg:text-base">
+                Terms & conditions
+            </a>
+        </div>
+    </footer> 
+    
+    <!------------ scroll up ---------->
+    <a href="#" class="scrollup fixed right-4 bottom-[-30%] bg-white box-shadow-peach inline-flex p-[.35rem] z-10 " id="scroll-up">
+        <i class="ri-arrow-up-line"></i>
+    </a>
+
+ 
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script src="index.js"></script>  
+</body>
+
+</html>
